@@ -1,0 +1,24 @@
+To uninstall pre-installed apps using ADB (Android Debug Bridge), follow these steps:
+
+1. Install ADB on your computer if you haven't already. You can download the Android SDK Platform Tools, which includes ADB, from the official Android developer website.
+2. Enable USB debugging on your Android device. Go to "Settings" > "About phone" and tap on the "Build number" seven times to enable Developer options. Then, go to "Settings" > "Developer options" and enable "USB debugging."
+3. Connect your Android device to your computer using a USB cable.
+4. Open a command prompt or terminal window on your computer and navigate to the directory where ADB is installed. This is usually the "platform-tools" folder inside the Android SDK installation directory.
+5. Run the following command to verify that your device is properly connected and recognized by ADB:
+   
+   
+   adb devices
+   
+
+   If your device is listed, you're ready to proceed.
+6. To uninstall a pre-installed app, use the following command:
+   
+   
+   adb uninstall <package_name>
+   Replace `<package_name>` with the actual package name of the app you want to uninstall. You can find the package name of an app by checking the app's Play Store URL or by using the command:
+   
+   
+   adb shell pm list packages | grep '<keyword>'
+   Replace `<keyword>` with a keyword related to the app or its package name.
+7. After executing the uninstall command, the app will be removed from your device.
+Note: Be cautious when uninstalling pre-installed apps as some of them may be critical to the functioning of your device. It's recommended to research the app and its impact before uninstalling it. Additionally, using ADB requires some technical knowledge, so proceed with caution and make sure to follow instructions carefully.
